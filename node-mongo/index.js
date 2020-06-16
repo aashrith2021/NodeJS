@@ -18,13 +18,13 @@ MongoClient.connect(url).then((client)=>{
             
         console.log("Insert Document:\n", result.ops);
 
-        return dboper.findDocuments(db, "dishes") 
+        return dboper.findDocuments(db, "dishes");
         
     })
     .then((docs) => {
         console.log("Found Documents:\n", docs);
 
-        return dboper.updateDocument(db, { name: "Vadonut" },{ description: "Updated Test" }, "dishes")
+        return dboper.updateDocument(db, { name: "Vadonut" },{ description: "Updated Test" }, "dishes");
     })
     .then((result) => {
                         console.log("Updated Document:\n", result.result);
@@ -34,12 +34,12 @@ MongoClient.connect(url).then((client)=>{
                     .then((docs) => {
                             console.log("Found Updated Documents:\n", docs);
                             
-                        return db.dropCollection("dishes")
+                        return db.dropCollection("dishes");
                     })
                     .then((result) => {
                             console.log("Dropped Collection: ", result);
 
-                            client.close();
+                           return client.close();
                     })
                     .catch((err)=> console.log(err));
 
