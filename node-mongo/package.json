@@ -10,7 +10,7 @@
   "author": "Aashrith",
   "license": "ISC",
   "dependencies": {
-    "assert": "^2.0.0",
+    "assert": "^1.4.1",
     "mongodb": "^3.0.10"
   }
 }
