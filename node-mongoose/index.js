@@ -9,21 +9,21 @@ const connect = mongoose.connect(url);
 connect.then((db)=>{
     console.log("connected correctly to server");
 
-    var newDish = Dishes({
+    Dishes.create({
         name:'uttappizza',
         description:"test"
-    });
+    })
 
-    newDish.save()
+    
         .then((dish)=>{
             console.log(dish);
 
-            Dishes.find({}).exec();
+            return Dishes.find({});
         })
         .then((dishes)=>{
             console.log(dishes);
 
-            return Dishes.deleteOne({});
+            return Dishes.remove({});
             
         })
         .then(()=>{
